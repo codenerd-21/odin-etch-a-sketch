@@ -26,6 +26,7 @@ button {
   margin: 0 auto;
   display: grid;
   background: #606060;
+  grid-auto-rows: 100px;
 }
 
 .items {

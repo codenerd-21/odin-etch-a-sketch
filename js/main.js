@@ -30,7 +30,6 @@ function init(num) {
     });
     items.classList.add('items');
     items.setAttribute('id', count);
-    items.textContent = '*';
     container.appendChild(items);
     count++;
   }
