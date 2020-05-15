@@ -1,12 +1,17 @@
 /*--------------------- Constants ------------------*/
 const START_GAME = 16;
 
+
 /*--------------------- Variables ------------------*/
 let count = 1;
 let cellsMax;
 
 /*-------------- Cached Element References --------*/
 const container = document.querySelector('.container');
+const btn = document.querySelector('#btn');
+
+/*------------------ Event Listener ---------------*/
+btn.addEventListener('click', promptUser);
 
 /*--------------------- Functions -----------------*/
 
@@ -29,4 +34,19 @@ function init(num) {
     container.appendChild(items);
     count++;
   }
-};
+}
+
+//Prompt User for New Grid Size and Clear Grid
+function promptUser() {
+  let msgBox = prompt("Enter the number of squares per side for the new Grid.", "(Max number is 64.)");
+  let msgValue = parseInt(msgBox);
+  if (msgValue != null) {
+    //Selects all cells so I can delete them.
+    const allCells = document.querySelectorAll('div.items');
+    allCells.forEach(function (item) {
+      item.remove();
+    })
+    //Re-initiates game with new starting grid value
+    init(msgValue);
+  }
+}
