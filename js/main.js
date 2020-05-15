@@ -30,7 +30,7 @@ function init(num) {
     });
     items.classList.add('items');
     items.setAttribute('id', count);
-    items.textContent = 'place holder text';
+    items.textContent = '*';
     container.appendChild(items);
     count++;
   }
